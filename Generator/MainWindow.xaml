@@ -1,0 +1,83 @@
+﻿<Window x:Class="Generator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="220" Width="300"
+        MouseDown="window_MouseDown"
+        PreviewKeyDown="window_PreviewKeyDown">
+    <Grid x:Name="Backer" Focusable="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Natures.Keys}" SelectedItem="{Binding Path=Nature}"/>
+        <Button Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" Content="Random Nature" Command="{Binding Path=RandomNature}"/>
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" BorderBrush="Black" BorderThickness="2">
+            <Grid ShowGridLines="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="1" Content="HP"/>
+                <Label Grid.Row="0" Grid.Column="2" Content="Atk"/>
+                <Label Grid.Row="0" Grid.Column="3" Content="Def"/>
+                <Label Grid.Row="0" Grid.Column="4" Content="Sp.Atk"/>
+                <Label Grid.Row="0" Grid.Column="5" Content="Sp.Def"/>
+                <Label Grid.Row="0" Grid.Column="6" Content="Spd"/>
+                <Label Grid.Row="1" Grid.Column="0" Content="Species Base"/>
+                <Label Grid.Row="2" Grid.Column="0" Content="Nature Base"/>
+                <Label Grid.Row="3" Grid.Column="0" Content="Boosted by:"/>
+                <Label Grid.Row="4" Grid.Column="0" Content="Current:"/>
+
+                <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=INHP}" BorderThickness="0" GotFocus="TextBox_GotFocus"/>
+                <TextBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=INATK}" BorderThickness="0"/>
+                <TextBox Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=INDEF}" BorderThickness="0"/>
+                <TextBox Grid.Row="1" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=INSPATK}" BorderThickness="0"/>
+                <TextBox Grid.Row="1" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=INSPDEF}" BorderThickness="0"/>
+                <TextBox Grid.Row="1" Grid.Column="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=INSPD}" BorderThickness="0"/>
+
+                <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=ahp}" BorderThickness="0"/>
+                <TextBox Grid.Row="2" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=aatk}" BorderThickness="0"/>
+                <TextBox Grid.Row="2" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=adef}" BorderThickness="0"/>
+                <TextBox Grid.Row="2" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=asatk}" BorderThickness="0"/>
+                <TextBox Grid.Row="2" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=asdef}" BorderThickness="0"/>
+                <TextBox Grid.Row="2" Grid.Column="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" Text="{Binding Path=aspd}" BorderThickness="0"/>
+
+                <TextBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Text="{Binding Path=hp}" BorderThickness="0"/>
+                <TextBox Grid.Row="3" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Text="{Binding Path=atk}" BorderThickness="0"/>
+                <TextBox Grid.Row="3" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Text="{Binding Path=def}" BorderThickness="0"/>
+                <TextBox Grid.Row="3" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Text="{Binding Path=spatk}" BorderThickness="0"/>
+                <TextBox Grid.Row="3" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Text="{Binding Path=spdef}" BorderThickness="0"/>
+                <TextBox Grid.Row="3" Grid.Column="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Text="{Binding Path=spd}" BorderThickness="0"/>
+
+                <TextBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Text="{Binding Path=ohp}" BorderThickness="0"/>
+                <TextBox Grid.Row="4" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Text="{Binding Path=oatk}" BorderThickness="0"/>
+                <TextBox Grid.Row="4" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Text="{Binding Path=odef}" BorderThickness="0"/>
+                <TextBox Grid.Row="4" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Text="{Binding Path=osatk}" BorderThickness="0"/>
+                <TextBox Grid.Row="4" Grid.Column="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Text="{Binding Path=osdef}" BorderThickness="0"/>
+                <TextBox Grid.Row="4" Grid.Column="6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Text="{Binding Path=ospd}" BorderThickness="0"/>
+            </Grid>
+        </Border>
+        <Label Grid.Row="3" Grid.Column="0" Content="Level" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=Level}" VerticalAlignment="Center"/>
+        <Button Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Content="Stat up" Command="{Binding Path=StatUp}"/>
+    </Grid>
+</Window>
